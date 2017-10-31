@@ -474,6 +474,7 @@ def resized_img_tag(path, **kw):
 
 def resized_img_src(path, **kw):
     self = current_app.extensions['images']
-    return self.build_url(path, **kw)
-
-
+    try:
+        return self.build_url(path, **kw)
+    except:
+        return kw.get('default_url', None)
