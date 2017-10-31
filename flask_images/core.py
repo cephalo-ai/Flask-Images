@@ -477,6 +477,4 @@ def resized_img_src(path, **kw):
     try:
         return self.build_url(path, **kw)
     except:
-        return 'https://storage.googleapis.com/assets.getwellio.com/mandoline.cephalo.ai/mandoline-no-image.png'
-
-
+        return kw.get('default_url', None)
